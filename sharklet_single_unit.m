@@ -1,12 +1,12 @@
 
 function sharklet_single_unit(xc, yc, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax)
 
-fprintf(2,"Center position: %d, %d\n", xc, yc);
+% fprintf(2,"Center position: %d, %d\n", xc, yc);
 
 % Unit cell at the center
 x0 = xc - 3 * (Lx + sx);
 y0 = yc;
-fprintf(2,"--The 1st strip position: %d, %d\n", x0, y0);
+% fprintf(2,"--The 1st strip position: %d, %d\n", x0, y0);
 
 xn = zeros(7,1);
 xn(1) = x0;
@@ -43,7 +43,7 @@ end
 % Unit cell at the left top
 x0 = xc - 3 * (Lx + sx) - 3 * (Lx + sx);
 y0 = yc + (Lymin/2 + sy + Lymax/2);
-fprintf(2,"Top Left--The 1st strip position: %d, %d\n", x0, y0);
+% fprintf(2,"Top Left--The 1st strip position: %d, %d\n", x0, y0);
 
 xn = zeros(7,1);
 xn(1) = x0;
@@ -79,7 +79,7 @@ end
 % Unit cell at the right top
 x0 = xc - 3 * (Lx + sx) + 3 * (Lx + sx);
 y0 = yc + (Lymin/2 + sy + Lymax/2);
-fprintf(2,"Top Right--The 1st strip position: %d, %d\n", x0, y0);
+% fprintf(2,"Top Right--The 1st strip position: %d, %d\n", x0, y0);
 
 xn = zeros(7,1);
 xn(1) = x0;
@@ -116,7 +116,7 @@ end
 x0 = xc + 3 * (Lx + sx) - 3 * (Lx + sx);
 y0 = yc - (Lymin/2 + sy + Lymax/2);
 
-fprintf(2,"Bottom Right--The 1st strip position: %d, %d\n", x0, y0);
+% fprintf(2,"Bottom Right--The 1st strip position: %d, %d\n", x0, y0);
 
 
 xn = zeros(7,1);
@@ -154,7 +154,7 @@ end
 x0 = xc - 3 * (Lx + sx) - 3 * (Lx + sx);
 y0 = yc - (Lymin/2 + sy + Lymax/2);
 
-fprintf(2,"Bottom Left--The 1st strip position: %d, %d\n", x0, y0);
+% fprintf(2,"Bottom Left--The 1st strip position: %d, %d\n", x0, y0);
 
 xn = zeros(7,1);
 xn(1) = x0;
