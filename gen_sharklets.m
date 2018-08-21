@@ -25,10 +25,9 @@ if (Lymax <= Lymin)
     dist("!!Lymax < Lymin; Decrease Lymin or increase ly_uc or decrease sy.");
 end
 
-txt = sprintf("Lx = %d, Lymax = %d\n",Lx, Lymax);
-% sprintf('Lx = %lf, Lymax = %lf\n',Lx, Lymax);
-fprintf(2,txt);
-%disp(txt);
+% txt = sprintf("Lx = %d, Lymax = %d\n",Lx, Lymax);
+
+% fprintf(2,txt);
 
 %Lymax = 700;  % maximum y-length of a single strip
 
@@ -56,3 +55,15 @@ set(gca,'xtick',[]);
 set(gca,'xticklabel',[]);
 set(gca,'ytick',[]);
 set(gca,'yticklabel',[]);
+
+
+% Output structure parameters
+txt1 = sprintf("Lx = %d, Lymin = %d, Lymax = %d\n",Lx, Lymin, Lymax);
+txt2 = sprintf("sx = %d, sy = %d\n",sx, sy);
+txt3 = sprintf("lx_uc = %d, ly_uc = %d\n",lx_uc, ly_uc);
+txt4 = sprintf("figwidth = %d, figheight = %d\n",figwidth, figheight);
+
+fprintf(2,txt1);
+fprintf(2,txt2);
+fprintf(2,txt3);
+fprintf(2,txt4);
