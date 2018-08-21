@@ -1,5 +1,5 @@
 
-function sharklet_single_unit(xc, yc, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax)
+function sharklet_single_unit(xc, yc, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax, col)
 
 % fprintf(2,"Center position: %d, %d\n", xc, yc);
 
@@ -31,7 +31,7 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
-    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', 'b', 'FaceColor', 'b', 'LineWidth', 1);axis equal;
+    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
     %     axis off;
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
@@ -68,7 +68,7 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
-    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', 'b', 'FaceColor', 'b', 'LineWidth', 1);axis equal;
+    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
     set(gca,'position',[0 0 1 1]);
@@ -104,7 +104,7 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
-    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', 'b', 'FaceColor', 'b', 'LineWidth', 1);axis equal;
+    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
     set(gca,'position',[0 0 1 1]);
@@ -142,7 +142,7 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
-    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', 'b', 'FaceColor', 'b', 'LineWidth', 1);axis equal;
+    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
     set(gca,'position',[0 0 1 1]);
@@ -179,7 +179,7 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
-    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', 'b', 'FaceColor', 'b', 'LineWidth', 1);axis equal;
+    rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
     set(gca,'position',[0 0 1 1]);

@@ -1,3 +1,9 @@
+numstack = 40;
+nsground = 10;
+nssharklet = 10;
+fnamebase = 'shkstack';
+
+
 
 nunits_x = 1;  % # of unit cells along x axis
 nunits_y = 1;  % # of unit cells along y axis
@@ -11,6 +17,12 @@ sy = sx*1.25;
 
 xc = 0;
 yc = 0;
+
+sharklet_color = [1 1 1]; %white
+blank_color = [0 0 0]; %black
+fig_default_color = blank_color;
+%========================================================================
+nsblank = numstack - nsground - nssharklet;
 
 Lx = lx_uc/6 - sx;  % x-length of a single strip
 
@@ -36,7 +48,12 @@ figbottom = 0;
 figwidth = lx_uc * nunits_x;
 figheight = ly_uc * nunits_y;
 
-fig = figure('Color',[1 1 1],'Position',[figleft figbottom figwidth figheight]);
+fig = figure('Color',fig_default_color,'Position',[figleft figbottom figwidth figheight]);
+for i=0:nunits_x-1
+    for j=0:nunits_y-1
+        rectangle_single_unit(xc+lx_uc*i, yc+ly_uc*j, lx_uc, ly_uc, xfmin, xfmax, yfmin, yfmax, blank_color);
+    end
+end
 hold on;
 xfmin = xc - lx_uc/2;
 xfmax = xc + lx_uc/2 + (nunits_x-1) * lx_uc;
@@ -45,7 +62,7 @@ yfmax = yc + ly_uc/2 + (nunits_y-1) * ly_uc;
 
 for i=0:nunits_x-1
     for j=0:nunits_y-1
-        sharklet_single_unit(xc+lx_uc*i, yc+ly_uc*j, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax);
+        sharklet_single_unit(xc+lx_uc*i, yc+ly_uc*j, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax, sharklet_color);
     end
 end
 
@@ -68,4 +85,53 @@ fprintf(2,txt2);
 fprintf(2,txt3);
 fprintf(2,txt4);
 
-saveas(fig,'test.png');
+fname_sharklet = sprintf("SU%dby%dRes%dW%dH",nunits_x,nunits_y,figwidth,figheight);
+fs = char(fname_sharklet);
+saveas(fig,fullfile([fs, '.png']));
+% close(fig);
+
+fig2 = figure('Color',fig_default_color,'Position',[figleft figbottom figwidth figheight]);
+for i=0:nunits_x-1
+    for j=0:nunits_y-1
+        rectangle_single_unit(xc+lx_uc*i, yc+ly_uc*j, lx_uc, ly_uc, xfmin, xfmax, yfmin, yfmax, blank_color);
+    end
+end
+fname_blank = sprintf("BU%dby%dRes%dW%dH",nunits_x,nunits_y,figwidth,figheight);
+fb = char(fname_blank);
+saveas(fig2,fullfile([fb,'.png']));
+% close(fig2);
+
+fig3 = figure('Color',fig_default_color,'Position',[figleft figbottom figwidth figheight]);
+for i=0:nunits_x-1
+    for j=0:nunits_y-1
+        rectangle_single_unit(xc+lx_uc*i, yc+ly_uc*j, lx_uc, ly_uc, xfmin, xfmax, yfmin, yfmax, sharklet_color);
+    end
+end
+fname_ground = sprintf("GU%dby%dRes%dW%dH",nunits_x,nunits_y,figwidth,figheight);
+fg = char(fname_ground);
+saveas(fig3,fullfile([fg,'.png']));
+% close(fig3);
+
+% Generating a bunch of the stacked image
+for i = 0:numstack-1
+    fnamework = [fnamebase,num2str(i,'%03d'),'.png'];
+    % The ground region
+    if (i <= nsground-1)
+        figwork = fig3;
+        saveas(figwork,fnamework);
+%         hgexport(figwork, fnamework, hgexport('factorystyle'), 'Format', 'png');
+    end
+    % The sharklet region
+    if (i > nsground-1 && i <= nsground+nssharklet-1)
+        figwork = fig;
+        saveas(figwork,fnamework);
+%         hgexport(figwork, fnamework, hgexport('factorystyle'), 'Format', 'png');
+    end
+    % The blank region
+    if (i > nsground+nssharklet-1)
+        figwork = fig2;
+        saveas(figwork,fnamework);
+%         hgexport(figwork, fnamework, hgexport('factorystyle'), 'Format', 'png');
+    end
+end
+
