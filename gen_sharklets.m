@@ -1,12 +1,12 @@
 
-nunits_x = 3;  % # of unit cells along x axis
-nunits_y = 3;  % # of unit cells along y axis
+nunits_x = 1;  % # of unit cells along x axis
+nunits_y = 1;  % # of unit cells along y axis
 
-lx_uc = 450;
-ly_uc = 450;
+lx_uc = 100;
+ly_uc = 100;
 
-Lymin = 90;  % minimum y-length of a single strip
-sx = 30;
+Lymin = 20;  % minimum y-length of a single strip
+sx = 5;
 sy = sx*1.25;
 
 xc = 0;
@@ -67,3 +67,5 @@ fprintf(2,txt1);
 fprintf(2,txt2);
 fprintf(2,txt3);
 fprintf(2,txt4);
+
+saveas(fig,'test.png');
