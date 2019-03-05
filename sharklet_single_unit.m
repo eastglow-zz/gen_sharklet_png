@@ -1,5 +1,5 @@
 
-function sharklet_single_unit(xc, yc, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax, col)
+function sharklet_single_unit(xc, yc, Lx, Lymin, Lymax, sx, sy, xfmin, xfmax, yfmin, yfmax, col, figleft, figbottom, figwidth, figheight)
 
 % fprintf(2,"Center position: %d, %d\n", xc, yc);
 
@@ -31,10 +31,16 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
+    
+%     rectangle_single_unit(xCenter, yCenter, width, height, xfmin, xfmax, yfmin, yfmax, col, figleft, figbottom, figwidth, figheight);
+    
     rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
     %     axis off;
+%     set(gca,'xlim',[max(figleft,xfmin), min(figleft+figwidth, xfmax)]);
+%     set(gca,'ylim',[max(figbottom,yfmin), min(figbottom+figheight, yfmax)]);
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
+%     set(gca,'position',[figleft figbottom figwidth figheight]);
     set(gca,'position',[0 0 1 1]);
     hold on;
 end
@@ -68,10 +74,16 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
+    
+%     rectangle_single_unit(xCenter, yCenter, width, height, xfmin, xfmax, yfmin, yfmax, col, figleft, figbottom, figwidth, figheight);
+    
     rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
+%     set(gca,'xlim',[max(figleft,xfmin), min(figleft+figwidth, xfmax)]);
+%     set(gca,'ylim',[max(figbottom,yfmin), min(figbottom+figheight, yfmax)]);
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
     set(gca,'position',[0 0 1 1]);
+%     set(gca,'position',[figleft figbottom figwidth figheight]);
     hold on;
     %     axis off;
 end
@@ -104,9 +116,15 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
+    
+%     rectangle_single_unit(xCenter, yCenter, width, height, xfmin, xfmax, yfmin, yfmax, col, figleft, figbottom, figwidth, figheight);
+    
     rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
+%     set(gca,'xlim',[max(figleft,xfmin), min(figleft+figwidth, xfmax)]);
+%     set(gca,'ylim',[max(figbottom,yfmin), min(figbottom+figheight, yfmax)]);
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
+%     set(gca,'position',[figleft figbottom figwidth figheight]);
     set(gca,'position',[0 0 1 1]);
     hold on;
     %     axis off;
@@ -142,9 +160,15 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
+    
+%     rectangle_single_unit(xCenter, yCenter, width, height, xfmin, xfmax, yfmin, yfmax, col, figleft, figbottom, figwidth, figheight);
+    
     rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
+%     set(gca,'xlim',[max(figleft,xfmin), min(figleft+figwidth, xfmax)]);
+%     set(gca,'ylim',[max(figbottom,yfmin), min(figbottom+figheight, yfmax)]);
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
+%     set(gca,'position',[figleft figbottom figwidth figheight]);
     set(gca,'position',[0 0 1 1]);
     hold on;
     %     axis off;
@@ -179,9 +203,15 @@ for i=1:7
     yCenter = y0; % Wherever...
     xLeft = xCenter - width/2;
     yBottom = yCenter - height/2;
+    
+%     rectangle_single_unit(xCenter, yCenter, width, height, xfmin, xfmax, yfmin, yfmax, col, figleft, figbottom, figwidth, figheight);
+    
     rectangle('Position', [xLeft, yBottom, width, height], 'EdgeColor', col, 'FaceColor', col, 'LineWidth', 1);axis equal;
+%     set(gca,'xlim',[max(figleft,xfmin), min(figleft+figwidth, xfmax)]);
+%     set(gca,'ylim',[max(figbottom,yfmin), min(figbottom+figheight, yfmax)]);
     set(gca,'xlim',[xfmin, xfmax]);
     set(gca,'ylim',[yfmin, yfmax]);
+%     set(gca,'position',[figleft figbottom figwidth figheight]);
     set(gca,'position',[0 0 1 1]);
     hold on;
     %     axis off;
