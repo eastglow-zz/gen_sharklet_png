@@ -3,25 +3,28 @@ ylen = 4.8;
 zlen = 5.12;
 
 h_ground = 0.56;
-h_pattern = 0.56;
+h_pattern = 0.70;
 
 pattern_shift_x = 0;
 pattern_shift_y = 0;
 
-sharklet_xspacing = 0.35;
+sharklet_xspacing = 0.6/2;
 sharklet_yspacing = sharklet_xspacing * 1;
-sharklet_minyLen = 1.0;
+sharklet_minyLen = 0.9/2;
 
-symmetry_cut = "xy"; % none: for full unit cells, x: symmetry for x-plane, y: symmetry for y-plane, xy: symmetry for xy plane
+symmetry_cut = "none"; % none: for full unit cells, x: symmetry for x-plane, y: symmetry for y-plane, xy: symmetry for xy plane
+%Periodic shift only works if symmetry_cut = "none"
+periodic_shift_center_x = 0.5; % Relative coorinate. 0.5: default
+periodic_shift_center_y = 0.5; % Relative coorinate. 0.5: default
 
 numpixel_x = 384;
 numpixel_y = 384;
 
 numstack = 256;
-fnamebase = 'shkstack';
+fnamebase = 'Rods';
 
 nunits_x = 1;  % # of unit cells along x axis
-nunits_y = 1;  % # of unit cells along y axis
+nunits_y = 3;  % # of unit cells along y axis
 
 %========================================================================
 
@@ -193,9 +196,10 @@ end
 % xy-symmetry
 if (strcmp(symmetry_cut, "xy"))
     disp("xy symmetry");
-    figleft_crpd = figleft + figwidth/2 + 1;
+%     figleft_crpd = figleft + figwidth/2 + 1;
+    figleft_crpd = figleft;
     figbottom_crpd = figbottom;
-    figwidth_crpd = figwidth;
+    figwidth_crpd = figwidth/2;
     figheight_crpd = figheight/2;
 end
 
